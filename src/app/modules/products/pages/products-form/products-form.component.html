@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-lg-6 d-flex align-items-center">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="exampleInputName">Name</label>
+          <input class="form-control" id="name" type="text" name="name"
+          placeholder="" autocomplete="off"
+          formControlName="name" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPrice">Price</label>
+            <input class="form-control" id="price" type="text" name="price"
+            placeholder="" autocomplete="off"
+            formControlName="price" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputDescription">Description</label>
+            <input class="form-control" id="description" type="text" name="description"
+            placeholder="" autocomplete="off"
+            formControlName="description" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputImage">Image</label>
+          <input class="form-control" id="Image" type="text" name="Image"
+          placeholder="" autocomplete="off"
+          formControlName="image" required>
+      </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid || busy">
+          {{busy ? 'Guardando...' : 'Guardar'}}
+        </button>
+      </form>
+    </div>
+  </div>
